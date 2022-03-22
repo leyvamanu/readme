@@ -70,6 +70,10 @@ Encore
 
     // uncomment if you're having problems with a jQuery plugin
     //.autoProvidejQuery()
+
+    //enablers PostCss
+    .enablePostCssLoader()
+
     //LiveReload
     .configureDevServerOptions((options) => {
         options.liveReload = true;

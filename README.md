@@ -78,6 +78,9 @@ Añadir al fichero tailwind.config.js
       ],
 
 Añadir al fichero webpack.config.js
+    
+    //enablers PostCss
+    .enablePostCssLoader()
 
     //LiveReload
     .configureDevServerOptions((options) => {
