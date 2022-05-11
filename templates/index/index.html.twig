@@ -4,8 +4,15 @@
 
 {% block body %}
     <div class="bg-amber-200">
-        <div class="container mx-auto ">
+        <div class="container mx-auto">
             <h1 class="text-4xl">{{ controller_name }}</h1>
+            <ul>
+                <li>
+                    <a href="{{ path('app_register') }}" class="hover:text-blue-900">
+                        REGISTER
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
 {% endblock %}
