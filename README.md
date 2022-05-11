@@ -1,4 +1,5 @@
-# README PARA DESCARGAR
+# README 
+##PARA DESCARGAR
 Clonamos el repositorio
 
     git clone https://github.com/leyvamanu/readme.git
@@ -19,12 +20,12 @@ Arrancamos el reload del navegador
 
     encore dev-server
 
-# README PASOS A SEGUIDOS
+##PASOS A PASO
 Creamos el proyecto
 
     symfony new readme
 
-Instalamos dependencias
+###Instalamos dependencias
 
 Maker bundle
     
@@ -50,7 +51,8 @@ Instalamos dependencias npm
 
     npm install
 
-Tailwind
+##Tailwind
+Instalamos tailwind
 
     npm install
 
@@ -60,6 +62,15 @@ Tailwind
 
     npx tailwindcss init
 
+Añadir al fichero tailwind.config.js
+
+    purge: [
+        './templates/**/*.html.twig',
+        './assets/**/*.css',
+        './assets/**/*.js',
+      ],
+
+##POSTCSS
 Crear fichero postcss.config.js en la raiz del proyecto y añadir
     
     module.exports = {
@@ -69,14 +80,7 @@ Crear fichero postcss.config.js en la raiz del proyecto y añadir
       },
     }
 
-Añadir al fichero tailwind.config.js
-
-    purge: [
-        './templates/**/*.html.twig',
-        './assets/**/*.css',
-        './assets/**/*.js',
-      ],
-
+##LIVE RELOAD
 Añadir al fichero webpack.config.js
     
     //enablers PostCss
@@ -91,3 +95,47 @@ Añadir al fichero webpack.config.js
             './src/**/*'
         ]
     })
+
+##BASE DE DATOS
+Dependencias
+
+    composer require orm
+
+Confirurar .env
+
+    DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name?serverVersion=5.7&charset=utf8mb4"
+
+Crear BD
+    
+    php bin/console doctrine:database:create
+
+##Seguridad
+Dependencias  
+  
+    composer require symfony/security-bundle
+
+Crear entidad usuario
+
+    php bin/console make:user
+
+Actualizar BD
+
+    php bin/console make:migration
+    php bin/console doctrine:migrations:migrate
+
+Formulario de registro
+
+    composer require symfonycasts/verify-email-bundle
+    php bin/console make:registration-form
+
+Email
+
+    composer require symfonycasts/verify-email-bundle
+
+Descomentar .env (MaiHog)
+
+    MAILER_DSN=smtp://localhost
+
+(OPCIONAL) gmail mailer
+    
+    composer require symfony/google-mailer 
