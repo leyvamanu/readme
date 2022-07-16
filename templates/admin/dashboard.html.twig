@@ -1,0 +1,13 @@
+{% extends '@EasyAdmin/page/content.html.twig' %}
+{% block head_stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('app') }}
+{% endblock %}
+
+{% block content_title 'ReadMe' %}
+
+{% block main %}
+    <div class="container">
+        <h2 class="text-2xl mb-3">ToDo:</h2>
+    </div>
+{% endblock %}
